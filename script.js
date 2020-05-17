@@ -39,7 +39,7 @@ function generatePassword() {
       passwordOptions.push(symbols);
     }
     if (passwordOptions.length === 0) {
-      window.alert("No character types were selected. Please select at least on character type for your password.");
+      window.alert("No character types were selected. Please select at least one character type for your password.");
       
     }
     
