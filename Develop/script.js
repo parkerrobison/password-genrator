@@ -6,8 +6,9 @@ var symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', 
 
 function generatePassword() {
   var passwordOptions = [];
-  var passwordLength = 0;
-  var newPasssword = "";  
+  var passwordLength = 0; 
+  var newPassword = "";
+  
 
   while (passwordLength < 8 || passwordLength > 128) {
     passwordLength = window.prompt("How long will your password be? Please enter a value between 8 and 128.");
@@ -18,22 +19,22 @@ function generatePassword() {
 
   // if confirm is true, an array will be added to passwordOptions
   while (passwordOptions.length === 0) {
-    var optionLower = window.confirm("Will your password include lower case letters? Click 'Okay' for yes and 'Cancel' for no."); 
+    var optionLower = window.confirm("Will your password include lower case letters? Click 'OK' for yes and 'Cancel' for no."); 
     if (optionLower) {
       passwordOptions.push(lower);
     }
 
-    var optionUpper = window.confirm("Will your password include upper case letters? Click 'Okay' for yes and 'Cancel' for no."); 
+    var optionUpper = window.confirm("Will your password include upper case letters? Click 'OK' for yes and 'Cancel' for no."); 
     if (optionUpper) {
       passwordOptions.push(upper);
     }
 
-    var optionNum = window.confirm("Will your password include numbers? Click 'Okay' for yes and 'Cancel' for no."); 
+    var optionNum = window.confirm("Will your password include numbers? Click 'OK' for yes and 'Cancel' for no."); 
     if (optionNum) {
       passwordOptions.push(number);
     }
 
-    var optionSym = window.confirm("Will your password include symbols? Click 'Okay' for yes and 'Cancel' for no."); 
+    var optionSym = window.confirm("Will your password include symbols? Click 'OK' for yes and 'Cancel' for no."); 
     if (optionSym) {
       passwordOptions.push(symbols);
     }
@@ -41,23 +42,19 @@ function generatePassword() {
       window.alert("No character types were selected. Please select at least on character type for your password.");
       
     }
+    
+      //for random password option array choice. 
+      for(var i = 0; i < passwordLength; i++){
+        var randomArray = passwordOptions[Math.floor(Math.random()* passwordOptions.length)];
+        newPassword += randomArray[Math.floor(Math.random()* randomArray.length )];
+
+      }
+    }
+    
+    return newPassword;
   }
 
-
-  //password criteria length, upper, lower, sym, num
-
-
   //prompt validation
-
-
-  // 1 criteria requirement. 
-
-
-
-
-
-
- }
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
