@@ -11,37 +11,37 @@ function generatePassword() {
   
 
   while (passwordLength < 8 || passwordLength > 128) {
-    passwordLength = window.prompt("How long will your password be? Please enter a value between 8 and 128.");
-    if (passwordLength < 8 || passwordLength > 128)  {
-      window.alert("This is not a valid answer. Please enter a value between 8 and 128.");
+      passwordLength = window.prompt("How long will your password be? Please enter a value between 8 and 128.");
+      if (passwordLength < 8 || passwordLength > 128)  {
+        window.alert("This is not a valid answer. Please enter a value between 8 and 128.");
+      }
     }
-  }
 
   // if confirm is true, an array will be added to passwordOptions
   while (passwordOptions.length === 0) {
-    var optionLower = window.confirm("Will your password include lower case letters? Click 'OK' for yes and 'Cancel' for no."); 
-    if (optionLower) {
-      passwordOptions.push(lower);
-    }
+      var optionLower = window.confirm("Will your password include lower case letters? Click 'OK' for yes and 'Cancel' for no."); 
+      if (optionLower) {
+        passwordOptions.push(lower);
+      }
 
-    var optionUpper = window.confirm("Will your password include upper case letters? Click 'OK' for yes and 'Cancel' for no."); 
-    if (optionUpper) {
-      passwordOptions.push(upper);
-    }
+      var optionUpper = window.confirm("Will your password include upper case letters? Click 'OK' for yes and 'Cancel' for no."); 
+      if (optionUpper) {
+        passwordOptions.push(upper);
+      }
 
-    var optionNum = window.confirm("Will your password include numbers? Click 'OK' for yes and 'Cancel' for no."); 
-    if (optionNum) {
-      passwordOptions.push(number);
-    }
+      var optionNum = window.confirm("Will your password include numbers? Click 'OK' for yes and 'Cancel' for no."); 
+      if (optionNum) {
+        passwordOptions.push(number);
+      }
 
-    var optionSym = window.confirm("Will your password include symbols? Click 'OK' for yes and 'Cancel' for no."); 
-    if (optionSym) {
-      passwordOptions.push(symbols);
-    }
-    if (passwordOptions.length === 0) {
-      window.alert("No character types were selected. Please select at least one character type for your password.");
-      
-    }
+      var optionSym = window.confirm("Will your password include symbols? Click 'OK' for yes and 'Cancel' for no."); 
+      if (optionSym) {
+        passwordOptions.push(symbols);
+      }
+      if (passwordOptions.length === 0) {
+        window.alert("No character types were selected. Please select at least one character type for your password.");
+       
+      }
     
       //for random password option array choice. 
       for(var i = 0; i < passwordLength; i++){
@@ -51,8 +51,8 @@ function generatePassword() {
       }
     }
     
-    return newPassword;
-  }
+  return newPassword;
+}
 
   //prompt validation
 
