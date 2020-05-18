@@ -18,7 +18,7 @@ After the criteria has been set by the user a password is displayed in the text 
 https://parkerrobison.github.io/password-genrator/
  
 ## Preview of the application
- 
+ ![](images/password-generator-preview.JPG)
 ## Contribution
 Made by Parker Robison
 
